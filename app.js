@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 // 路由中间件
 app.use('/blog-api/test', require('./routes/test'));
 
+// 炫酷但没啥用的文字工具
 figlet('blog-api', (err, data) => console.log(data));
 
 // 监听端口
