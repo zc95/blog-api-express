@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // 路由中间件
-app.use('/', require('./routes/index'));
+app.use('/blog-api/test', require('./routes/test'));
 
 figlet('blog-api', (err, data) => console.log(data));
 
