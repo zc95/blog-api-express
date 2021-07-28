@@ -1,0 +1,27 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "description": "express+mongodb+eslint",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zc95/blog-api.git"
+  },
+  "author": "zhangcheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zc95/blog-api/issues"
+  },
+  "homepage": "https://github.com/zc95/blog-api#readme",
+  "devDependencies": {
+    "eslint-config-zc-base": "^1.0.1",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
+}
