@@ -23,21 +23,16 @@
     - password
 - article
     - create_time
-    - title
-    - desc
-    - content
     - create_by
     - update_time
-    - is_deleted
-    - tag
-    - is_top
-    - is_private
 - article_tag
     - create_date
-    - is_deleted
-    - name
     - create_by
 - article_comment
+
+## RESTful API
+- [阮一峰 RESTful API 设计指南](https://www.ruanyifeng.com/blog/2014/05/restful_api.html)
+- [eggjs RESTful API](https://eggjs.org/zh-cn/tutorials/restful.html)
 
 ## mongodb数据结构
 [MongoDB-数据类型](https://www.cnblogs.com/songzhixue/p/11203036.html)
@@ -78,3 +73,8 @@ Date：存储当前日期或时间unix时间格式 (我们一般不用这个Date
 
 ## chalk 文档
 - [chalk](https://www.npmjs.com/package/chalk)
+
+## APIDOC
+- [官方文档](https://apidocjs.com/)
+- https://blog.csdn.net/q3585914/article/details/80326330
+- https://www.jianshu.com/p/7e1b057b047c/

@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const figlet = require('figlet');
 const chalk = require('chalk');
+const path = require('path');
 
 // 初始化数据库
 require('./db');
@@ -10,8 +11,12 @@ require('./db');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// 渲染静态资源
+app.use(express.static(path.join(__dirname, 'public')));
+
 // 路由中间件
-app.use('/blog-api/test', require('./routes/test'));
+app.use('/api/test', require('./routes/test'));
+app.use('/api/article', require('./routes/article'));
 
 // 炫酷但没啥用的文字工具
 figlet('blog-api', (err, data) => console.log(data));
