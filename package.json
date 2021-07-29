@@ -6,7 +6,7 @@
     "scripts": {
         "start": "nodemon app.js",
         "apidoc": "apidoc -i ./routes/  -o ./public/apidoc",
-        "tree": "tree -I 'node_modules|public' -L 4 >tree.md"
+        "tree": "tree --dirs-first -I 'node_modules|public|.git' -L 4 >tree.md"
     },
     "repository": {
         "type": "git",
