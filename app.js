@@ -25,4 +25,5 @@ figlet('blog-api', (err, data) => console.log(data));
 const port = 3000;
 app.listen(port, () => {
     console.log(chalk.cyan('\nblog-api启动成功: ') + `http://localhost:${port}`);
+    console.log(chalk.cyan('\n接口文档: ') + `http://localhost:${port}/apidoc`);
 });
