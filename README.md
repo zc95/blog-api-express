@@ -75,3 +75,6 @@ Date：存储当前日期或时间unix时间格式 (我们一般不用这个Date
 ## mongoose 参考文档
 - [mongoosejs 官方文档](http://www.mongoosejs.net/)
 - [在Express项目中使用Mongoose](https://www.cnblogs.com/winyh/p/6682032.html)
+
+## chalk 文档
+- [chalk](https://www.npmjs.com/package/chalk)
