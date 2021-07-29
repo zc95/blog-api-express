@@ -1,6 +1,7 @@
 const express = require('express');
 // eslint-disable-next-line new-cap
 const router = express.Router();
+const ArticleService = require('../service/article');
 
 /**
  * @api {post} /api/article 新建文章
@@ -31,10 +32,14 @@ const router = express.Router();
  * @apiVersion 1.0.0
  */
 router.post('/', (req, res) => {
-    console.log(req.body);
+    const result = ArticleService.save({
+        title : req.title,
+        desc  : req.desc
+    });
     res.send({
-        code : 0,
-        msg  : '测试get请求'
+        code    : 0,
+        data    : result,
+        message : '测试get请求'
     });
 });
 module.exports = router;
