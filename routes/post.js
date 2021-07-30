@@ -21,25 +21,24 @@ const PostService = require('../service/post');
  *
  * @apiSuccess {Number} code 状态码
  * @apiSuccess {Object} data 返回数据
- * @apiSuccess {String} message 信息
+ * @apiSuccess {String} msg 信息
  * @apiSuccessExample {json} 响应示例
  * {
  *   "code": 0,
  *   "data": {}
- *   "message": ""
+ *   "msg": ""
  * }
  *
  * @apiVersion 1.0.0
  */
-router.post('/', (req, res) => {
-    const result = PostService.save({
-        title : req.title,
-        desc  : req.desc
-    });
+router.post('/', async(req, res) => {
+    const { title, desc } = req.body;
+    const post = new PostService();
+    const result = await post.create({ title, desc });
     res.send({
-        code    : 0,
-        data    : result,
-        message : '测试get请求'
+        code : 0,
+        data : result,
+        msg  : '新建文章成功'
     });
 });
 module.exports = router;

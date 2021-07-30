@@ -58,18 +58,21 @@ Timestamp：时间戳
 Date：存储当前日期或时间unix时间格式 (我们一般不用这个Date类型,时间戳可以秒杀一切时间类型)
 
 ## nodejs 参考文档
-- [express 官方文档](http://nodejs.cn/)
+- [node 中文文档](http://nodejs.cn/)
 ## express 参考文档
-- [express 官方文档](https://www.expressjs.com.cn/)
+- [express 中文文档](https://www.expressjs.com.cn/)
 
 ## mongodb 参考文档
-- [mongodb 官方文档](https://www.mongodb.com/zh-cn)
+- [mongodb 中文文档](https://www.mongodb.com/zh-cn)
 - [Mac中mongoDB的安装与卸载步骤详解](https://www.jb51.net/article/127232.htm)
 - [Mac下安装MongoDB和可视化工具以及安装过程中问题解决办法](https://blog.csdn.net/it_cgq/article/details/94762335)
 - [账户密码](https://www.cnblogs.com/xiaojf/p/12785912.html)
+
 ## mongoose 参考文档
-- [mongoosejs 官方文档](http://www.mongoosejs.net/)
+- [mongoosejs 中文文档](http://www.mongoosejs.net/) 有点落后
+- [mongoosejs 官方文档](https://mongoosejs.com/)
 - [在Express项目中使用Mongoose](https://www.cnblogs.com/winyh/p/6682032.html)
+- [Mongoose 校验参数](https://blog.csdn.net/weixin_30598225/article/details/99466013)
 
 ## chalk 文档
 - [chalk](https://www.npmjs.com/package/chalk)

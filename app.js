@@ -5,7 +5,7 @@ const chalk = require('chalk');
 const path = require('path');
 
 // 初始化数据库
-require('./db');
+require('./utils/db');
 
 // 对传入的请求体进行解析
 app.use(express.json());

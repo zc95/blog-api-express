@@ -59,7 +59,7 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "message",
+            "field": "msg",
             "description": "<p>信息</p>"
           }
         ]
@@ -67,7 +67,7 @@ define({ "api": [
       "examples": [
         {
           "title": "响应示例",
-          "content": "{\n  \"code\": 0,\n  \"data\": {}\n  \"message\": \"\"\n}",
+          "content": "{\n  \"code\": 0,\n  \"data\": {}\n  \"msg\": \"\"\n}",
           "type": "json"
         }
       ]

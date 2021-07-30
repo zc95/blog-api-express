@@ -1,22 +1,31 @@
 const mongoose = require('mongoose');
 
-const schemas = new mongoose.Schema({
+const PostSchemas = new mongoose.Schema({
     // 文章标题
     title: {
-        type    : String,
-        default : ''
+        type      : String,
+        default   : '',
+        trim      : true,
+        required  : [true, '标题不能为空'],
+        maxlength : [20, '标题最长20个字符']
     },
 
     // 描述
     desc: {
-        type    : String,
-        default : ''
+        type      : String,
+        default   : '',
+        trim      : true,
+        required  : [true, '描述必填'],
+        maxlength : [50, '描述最长50个字符']
     },
 
     // 内容
     content: {
-        type    : String,
-        default : ''
+        type      : String,
+        default   : '',
+        trim      : true,
+        required  : [true, '文章内容必填'],
+        maxlength : [5000, '文章内容最长5000个字符']
     },
 
     // 关联的tag
@@ -50,4 +59,4 @@ const schemas = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('post', schemas);
+module.exports = mongoose.model('Post', PostSchemas, 'post');
