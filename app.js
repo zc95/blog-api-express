@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 路由中间件
 app.use('/api/test', require('./routes/test'));
-app.use('/api/article', require('./routes/article'));
+app.use('/api/post', require('./routes/post'));
 
 // 炫酷但没啥用的文字工具
 figlet('blog-api', (err, data) => console.log(data));

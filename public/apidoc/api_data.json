@@ -1,14 +1,14 @@
 [
   {
     "type": "post",
-    "url": "/api/article",
+    "url": "/api/post",
     "title": "新建文章",
     "description": "<p>新建文章</p>",
-    "name": "新建文章apiName",
+    "name": "新建文章",
     "group": "文章",
     "sampleRequest": [
       {
-        "url": "http://localhost:3000/api/article"
+        "url": "http://localhost:3000/api/post"
       }
     ],
     "parameter": {
@@ -73,7 +73,7 @@
       ]
     },
     "version": "1.0.0",
-    "filename": "routes/article.js",
+    "filename": "routes/post.js",
     "groupTitle": "文章"
   }
 ]

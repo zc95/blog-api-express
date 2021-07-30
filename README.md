@@ -21,14 +21,14 @@
     - telephone
     - name
     - password
-- article
+- post
     - create_time
     - create_by
     - update_time
-- article_tag
+- tag
     - create_date
     - create_by
-- article_comment
+- comment
 
 ## RESTful API
 - [阮一峰 RESTful API 设计指南](https://www.ruanyifeng.com/blog/2014/05/restful_api.html)

@@ -3,19 +3,18 @@ blog-api
 ├── db
 │   └── index.js
 ├── middleware
-├── models
-│   ├── article.js
+├── model
+│   ├── post.js
 │   └── tag.js
 ├── routes
-│   ├── article.js
+│   ├── post.js
 │   └── test.js
-├── schemas
-│   ├── article.js
-│   └── tag.js
 ├── service
+│   └── post.js
+├── utils
 ├── README.md
 ├── apidoc.json
 ├── app.js
 ├── package-lock.json
 ├── package.json
-└── tree.md
+└── tree.txt

@@ -1,7 +1,6 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// 标签的表结构
-module.exports = new mongoose.Schema({
+const schemas = new mongoose.Schema({
     // 标签名称
     name: {
         type    : String,
@@ -20,3 +19,5 @@ module.exports = new mongoose.Schema({
         default : false
     }
 });
+
+module.exports = mongoose.model('tag', schemas);

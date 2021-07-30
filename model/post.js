@@ -1,7 +1,6 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// 文章的表结构
-module.exports = new mongoose.Schema({
+const schemas = new mongoose.Schema({
     // 文章标题
     title: {
         type    : String,
@@ -50,3 +49,5 @@ module.exports = new mongoose.Schema({
         default : 0
     }
 });
+
+module.exports = mongoose.model('post', schemas);
