@@ -25,15 +25,29 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "desc",
-            "description": "<p>描述</p>"
+            "field": "content",
+            "description": "<p>文章内容</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": false,
+            "field": "tags",
+            "description": "<p>标签</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_private",
+            "description": "<p>是否仅自己可见</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "请求示例",
-          "content": "{\n  \"title\": \"文章标题\",\n  \"desc\": \"描述\"\n}",
+          "content": "{\n  \"title\": \"文章标题\",\n  \"content\": \"文章内容\",\n  \"tags\": [],\n  \"is_private\": false,\n}",
           "type": "json"
         }
       ]
@@ -67,7 +81,7 @@
       "examples": [
         {
           "title": "响应示例",
-          "content": "{\n  \"code\": 0,\n  \"data\": {}\n  \"msg\": \"\"\n}",
+          "content": "{\n  \"code\": 0,\n  \"data\": {},\n  \"msg\": \"\"\n}",
           "type": "json"
         }
       ]
