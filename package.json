@@ -5,7 +5,6 @@
     "main": "index.js",
     "scripts": {
         "start": "nodemon app.js",
-        "apidoc": "apidoc -i ./routes/  -o ./public/apidoc",
         "tree": "tree --dirs-first -I 'node_modules|public|.git' -L 4 >tree.txt"
     },
     "repository": {
@@ -29,7 +28,6 @@
         "node-xss": "^0.0.1"
     },
     "devDependencies": {
-        "apidoc": "^0.28.1",
         "eslint-config-zc-base": "^1.0.2",
         "highlight": "^0.2.4",
         "marked": "^2.1.3",
