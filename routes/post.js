@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const PostService = require('../service/post');
+const xss = require('node-xss').clean;
 
 /**
  * @api {post} /api/post 新建文章
@@ -32,8 +33,8 @@ const PostService = require('../service/post');
  */
 router.post('/', async(req, res, next) => {
     try {
-        // 处理传参
-        let { title, content, tag, is_private } = req.body;
+        // 处理传参 TODO: xss还是统一处理比较好
+        let { title, content, tag, is_private } = xss(req.body);
 
         // 新增
         const post = new PostService();

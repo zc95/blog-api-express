@@ -3,21 +3,34 @@
  *
  * doc:
  * https://www.npmjs.com/package/marked-ast
+ * https://www.npmjs.com/package/marked
+ * https://marked.js.org/using_advanced
+ * https://highlightjs.org
  *
  * bug:
  * https://github.com/markedjs/marked/issues/1238
  */
-const marked = require('marked-ast');
+const marked = require('marked');
+
+marked.setOptions({
+    renderer  : new marked.Renderer(),
+    highlight : function(code, lang) {
+        const hljs = require('highlight.js');
+        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+        return hljs.highlight(code, { language }).value;
+    },
+    pedantic    : false,
+    gfm         : true,
+    breaks      : false,
+    sanitize    : false,
+    smartLists  : true,
+    smartypants : false,
+    xhtml       : false
+});
 
 class Markdown {
-    constructor(content) {
-        this.ast = marked.parse(content);
-        this.html = marked.render(this.ast);
-    }
-
-    // 获取 ast
-    getAst() {
-        return this.ast;
+    constructor(mdStr) {
+        this.html = marked(mdStr);
     }
 
     // 获取 html
