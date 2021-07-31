@@ -32,22 +32,12 @@ const PostService = require('../service/post');
  */
 router.post('/', async(req, res, next) => {
     try {
-        // 处理参数
-        const title = req.body.title;
-        const desc = req.body.desc;
-        const content = req.body.content;
-        const tag = req.body.tag;
-        const is_private = req.body.is_private;
+        // 处理传参
+        let { title, content, tag, is_private } = req.body;
 
         // 新增
         const post = new PostService();
-        const result = await post.create({
-            title,
-            desc,
-            content,
-            tag,
-            is_private
-        });
+        const result = await post.create({ title, content, tag, is_private });
 
         // 返回数据
         res.send({

@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", (req, res, next) => {
     console.log(chalk.cyan(`\n[${dayjs().format('YYYY-MM-DD HH:mm:ss')}] ${req.url} 请求信息：`));
     console.log(req);
+    console.log('\n');
     next();
 });
 
@@ -35,7 +36,7 @@ app.use('/api/post', require('./routes/post'));
 // 错误处理中间件
 app.use(function(err, req, res, next) {
     console.log(chalk.red(`\n[${dayjs().format('YYYY-MM-DD HH:mm:ss')}] ${req.url} 错误信息：`));
-    console.error(err);
+    console.error(err.stack);
     console.log('\n');
 
 

@@ -2,8 +2,7 @@
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
         "source.fixAll": true,
-        "source.fixAll.eslint": true,
-        "source.fixAll.stylelint": true
+        "source.fixAll.eslint": true
     },
     "json.schemaDownload.enable": false,
     "eslint.format.enable": true,
