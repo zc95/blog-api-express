@@ -30,14 +30,33 @@ const PostService = require('../service/post');
  *
  * @apiVersion 1.0.0
  */
-router.post('/', async(req, res) => {
-    const { title, desc } = req.body;
-    const post = new PostService();
-    const result = await post.create({ title, desc });
-    res.send({
-        code : 0,
-        data : result,
-        msg  : '新建文章成功'
-    });
+router.post('/', async(req, res, next) => {
+    try {
+        // 处理参数
+        const title = req.body.title;
+        const desc = req.body.desc;
+        const content = req.body.content;
+        const tag = req.body.tag;
+        const is_private = req.body.is_private;
+
+        // 新增
+        const post = new PostService();
+        const result = await post.create({
+            title,
+            desc,
+            content,
+            tag,
+            is_private
+        });
+
+        // 返回数据
+        res.send({
+            code : 0,
+            data : result,
+            msg  : '新建文章成功'
+        });
+    } catch (error) {
+        next(error);
+    }
 });
 module.exports = router;

@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // 请求中间件
 app.use("/", (req, res, next) => {
-    console.log(chalk.cyan(`[${dayjs().format('YYYY-MM-DD HH:mm:ss')}] ${req.url} 请求信息：`));
+    console.log(chalk.cyan(`\n[${dayjs().format('YYYY-MM-DD HH:mm:ss')}] ${req.url} 请求信息：`));
     console.log(req);
     next();
 });
@@ -34,10 +34,27 @@ app.use('/api/post', require('./routes/post'));
 
 // 错误处理中间件
 app.use(function(err, req, res, next) {
-    res.status(err.status || 500).json({
-        message : err.message,
-        errors  : err.stack
-    });
+    console.log(chalk.red(`\n[${dayjs().format('YYYY-MM-DD HH:mm:ss')}] ${req.url} 错误信息：`));
+    console.error(err);
+    console.log('\n');
+
+
+    if (err.errors) { // mongoose schema 验证错误
+        const errors = err.errors;
+        // 错误类型
+        const eKeys = Object.keys(errors);
+        // 取第一个错误报出来
+        const msg = errors[eKeys.shift()].message;
+        res.json({
+            code: 1024,
+            msg
+        });
+    } else { // 其他错误
+        res.status(err.status || 500).json({
+            message : err.message || err,
+            errors  : err.stack
+        });
+    }
 });
 
 // 炫酷但没啥用的文字工具

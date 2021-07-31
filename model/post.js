@@ -12,11 +12,10 @@ const PostSchemas = new mongoose.Schema({
 
     // 描述
     desc: {
-        type      : String,
-        default   : '',
-        trim      : true,
-        required  : [true, '描述必填'],
-        maxlength : [50, '描述最长50个字符']
+        type     : String,
+        default  : '',
+        trim     : true,
+        required : false
     },
 
     // 内容

@@ -6,8 +6,7 @@ class PostService {
 
     // 新增文章
     async create(params) {
-        const post = new Post(params);
-        const newPost = await post.create();
+        const newPost = await Post.create(params);
         return newPost;
     }
 }
