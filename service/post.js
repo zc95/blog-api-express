@@ -5,14 +5,37 @@ class PostService {
     constructor() {
     }
 
-    // 新增文章
-    async create(params) {
+    // 新增/修改文章
+    save(params) {
+        const { _id, content } = params;
+
         // 处理desc
-        const md = new Markdown(params.content);
+        const md = new Markdown(content);
         params.desc = md.getDesc(150);
-        const newPost = await Post.create(params);
-        return newPost;
+
+        if (_id) {
+            return Post.updateOne({ _id }, params);
+        } else {
+            // 新增
+            return Post.create(params);
+        }
     }
+
+    // 查询单个文章
+    find(_id) {
+        return Post.findById(_id);
+    }
+
+    // 查询所有
+    search() {
+        return Post.find();
+    }
+
+    // 删除单个文章
+    delete(_id) {
+        return Post.deleteOne({ _id });
+    }
+
 }
 
 module.exports = PostService;

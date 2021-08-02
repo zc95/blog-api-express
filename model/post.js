@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 
 const PostSchemas = new mongoose.Schema({
+    // 封面
+    cover_image: {
+        type    : String,
+        default : '',
+        trim    : true
+    },
     // 文章标题
     title: {
         type      : String,
@@ -33,12 +39,6 @@ const PostSchemas = new mongoose.Schema({
         default : []
     },
 
-    // 是否被删除
-    is_deleted: {
-        type    : Boolean,
-        default : false
-    },
-
     // 是否置顶
     is_top: {
         type    : Boolean,
@@ -56,6 +56,6 @@ const PostSchemas = new mongoose.Schema({
         type    : Number,
         default : 0
     }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Post', PostSchemas, 'post');
