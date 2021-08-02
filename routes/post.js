@@ -3,7 +3,7 @@ const router = express.Router();
 const PostService = require('../service/post');
 // const xss = require('node-xss').clean;
 
-// 新增文章
+// 新增/编辑文章
 router.post('/', async(req, res, next) => {
     try {
         // 处理传参 TODO: xss还是统一处理比较好
