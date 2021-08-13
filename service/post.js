@@ -10,8 +10,8 @@ class PostService {
         const { _id, content } = params;
 
         // 处理desc
-        const md = new Markdown(content);
-        params.desc = md.getDesc(150);
+        // const md = new Markdown(content);
+        // params.desc = md.getDesc(150);
 
         if (_id) {
             return Post.updateOne({ _id }, params);

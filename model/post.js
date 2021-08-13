@@ -30,7 +30,7 @@ const PostSchemas = new mongoose.Schema({
         default   : '',
         trim      : true,
         required  : [true, '文章内容不能为空'],
-        maxlength : [5000, '文章内容最长5000个字符']
+        maxlength : [20000, '文章内容最长20000个字符']
     },
 
     // 关联的tags
